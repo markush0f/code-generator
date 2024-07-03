@@ -25,7 +25,7 @@ function generateClass(className: string, properties?: IProperties[], exportClas
         constructorParams(properties);
     }
     return `
-    export class ${className} {
+        ${exportClass ? 'export' : ''} class ${className} {
 
         ${props},
 
@@ -33,6 +33,10 @@ function generateClass(className: string, properties?: IProperties[], exportClas
 
     }
         `
+}
+
+function generateFunctions(){
+
 }
 
 console.log(generateClass('juan', [{ name: 'pedro', type: 'string', initProp: true }, { name: 'pedrito', type: 'number', optional: true }, { name: 'pedrito', type: 'number', optional: true, initProp: true }], true))
